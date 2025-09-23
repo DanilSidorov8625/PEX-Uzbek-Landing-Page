@@ -441,47 +441,53 @@
       </section>
 
       <!-- Shops Section -->
-<section id="shops" class="py-20 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2
-        class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
-        x-text="translations[language].shops.title"
-      ></h2>
-      <p
-        class="text-lg text-gray-600 max-w-2xl mx-auto mb-8"
-        x-text="translations[language].shops.subtitle"
-      ></p>
+      <section id="shops" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2
+              class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+              x-text="translations[language].shops.title"
+            >
+            </h2>
+            <p
+              class="text-lg text-gray-600 max-w-2xl mx-auto mb-8"
+              x-text="translations[language].shops.subtitle"
+            >
+            </p>
 
-      <!-- Shop Region Buttons -->
-      <div class="flex justify-center space-x-4 mb-8">
-        <button
-          @click="activeShopRegion = 'uae'"
-          :class="activeShopRegion === 'uae' ? 'bg-polar-blue text-white' : 'bg-white text-gray-700 hover:bg-gray-50'"
-          class="px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-md"
-          x-text="translations[language].shops.uae"
-        ></button>
-        <button
-          @click="activeShopRegion = 'us'"
-          :class="activeShopRegion === 'us' ? 'bg-polar-blue text-white' : 'bg-white text-gray-700 hover:bg-gray-50'"
-          class="px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-md"
-          x-text="translations[language].shops.us"
-        ></button>
-        <button
-          @click="activeShopRegion = 'canada'"
-          :class="activeShopRegion === 'canada' ? 'bg-polar-blue text-white' : 'bg-white text-gray-700 hover:bg-gray-50'"
-          class="px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-md"
-          x-text="translations[language].shops.canada"
-        ></button>
-      </div>
-    </div>
+            <!-- Shop Region Buttons -->
+            <div class="flex justify-center space-x-4 mb-8">
+              <button
+                @click="activeShopRegion = 'uae'"
+                :class="activeShopRegion === 'uae' ? 'bg-polar-blue text-white' : 'bg-white text-gray-700 hover:bg-gray-50'"
+                class="px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-md"
+                x-text="translations[language].shops.uae"
+              >
+              </button>
+              <button
+                @click="activeShopRegion = 'us'"
+                :class="activeShopRegion === 'us' ? 'bg-polar-blue text-white' : 'bg-white text-gray-700 hover:bg-gray-50'"
+                class="px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-md"
+                x-text="translations[language].shops.us"
+              >
+              </button>
+              <button
+                @click="activeShopRegion = 'canada'"
+                :class="activeShopRegion === 'canada' ? 'bg-polar-blue text-white' : 'bg-white text-gray-700 hover:bg-gray-50'"
+                class="px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-md"
+                x-text="translations[language].shops.canada"
+              >
+              </button>
+            </div>
+          </div>
 
-    <!-- UAE Shops -->
-    <div
-      x-show="activeShopRegion === 'uae'"
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-    >
-      <template x-for="shop in [
+          <!-- UAE Shops -->
+          <div
+            x-show="activeShopRegion === 'uae'"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+          >
+            <template
+              x-for="shop in [
         { href: 'https://Amazon.ae', img: './assets/images/shops/dubai/Amazon.avif', alt: 'Amazon UAE', name: 'Amazon UAE', desc: translations[language].shops.list.amazonUAE },
         { href: 'https://Noon.com', img: './assets/images/shops/dubai/Noon.avif', alt: 'Noon UAE', name: 'Noon', desc: translations[language].shops.list.noon },
         { href: 'https://Namshi.com', img: './assets/images/shops/dubai/Namshi.avif', alt: 'Namshi', name: 'Namshi', desc: translations[language].shops.list.namshi },
@@ -490,71 +496,108 @@
         { href: 'https://Bathandbodyworks.ae', img: './assets/images/shops/dubai/BathandBodyWorks.avif', alt: 'Bath and Body Works UAE', name: 'Bath & Body Works', desc: translations[language].shops.list.bbw },
         { href: 'https://Sivvi.com', img: './assets/images/shops/dubai/Sivvi.avif', alt: 'Sivvi UAE', name: 'Sivvi', desc: translations[language].shops.list.sivvi },
         { href: 'https://Ounass.ae', img: './assets/images/shops/dubai/ounass.avif', alt: 'Ounass UAE', name: 'Ounass', desc: translations[language].shops.list.ounass }
-      ]" :key="shop.name">
-        <a :href="shop.href" target="_blank" rel="noopener noreferrer">
-          <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 overflow-hidden group">
-            <div class="relative overflow-hidden">
-              <img :src="shop.img" :alt="shop.alt" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900 mb-2" x-text="shop.name"></h3>
-              <p class="text-gray-600 text-sm" x-text="shop.desc"></p>
-            </div>
+      ]"
+              :key="shop.name"
+            >
+              <a :href="shop.href" target="_blank" rel="noopener noreferrer">
+                <div
+                  class="bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 overflow-hidden group"
+                >
+                  <div class="relative overflow-hidden">
+                    <img
+                      :src="shop.img"
+                      :alt="shop.alt"
+                      class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                    >
+                  </div>
+                  <div class="p-6">
+                    <h3
+                      class="text-xl font-bold text-gray-900 mb-2"
+                      x-text="shop.name"
+                    >
+                    </h3>
+                    <p class="text-gray-600 text-sm" x-text="shop.desc"></p>
+                  </div>
+                </div>
+              </a>
+            </template>
           </div>
-        </a>
-      </template>
-    </div>
 
-    <!-- US Shops -->
-    <div
-      x-show="activeShopRegion === 'us'"
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-    >
-      <template x-for="shop in [
+          <!-- US Shops -->
+          <div
+            x-show="activeShopRegion === 'us'"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+          >
+            <template
+              x-for="shop in [
         { href: 'https://www.amazon.com/', img: './assets/images/shops/usa/amazon.avif', alt: 'Amazon US', name: 'Amazon US', desc: translations[language].shops.list.amazonUS },
         { href: 'https://www.nike.com/', img: './assets/images/shops/usa/Nike.avif', alt: 'Nike', name: 'Nike', desc: translations[language].shops.list.nike },
         { href: 'https://www.bestbuy.com/', img: './assets/images/shops/usa/BestBuy.avif', alt: 'Best Buy', name: 'Best Buy', desc: translations[language].shops.list.bestbuy },
         { href: 'https://www.macys.com/', img: './assets/images/shops/usa/macy.avif', alt: 'Macy\'s', name: 'Macy\'s', desc: translations[language].shops.list.macys }
-      ]" :key="shop.name">
-        <a :href="shop.href" target="_blank" rel="noopener noreferrer">
-          <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 overflow-hidden group">
-            <div class="relative overflow-hidden">
-              <img :src="shop.img" :alt="shop.alt" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900 mb-2" x-text="shop.name"></h3>
-              <p class="text-gray-600 text-sm" x-text="shop.desc"></p>
-            </div>
+      ]"
+              :key="shop.name"
+            >
+              <a :href="shop.href" target="_blank" rel="noopener noreferrer">
+                <div
+                  class="bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 overflow-hidden group"
+                >
+                  <div class="relative overflow-hidden">
+                    <img
+                      :src="shop.img"
+                      :alt="shop.alt"
+                      class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                    >
+                  </div>
+                  <div class="p-6">
+                    <h3
+                      class="text-xl font-bold text-gray-900 mb-2"
+                      x-text="shop.name"
+                    >
+                    </h3>
+                    <p class="text-gray-600 text-sm" x-text="shop.desc"></p>
+                  </div>
+                </div>
+              </a>
+            </template>
           </div>
-        </a>
-      </template>
-    </div>
 
-    <!-- Canada Shops -->
-    <div
-      x-show="activeShopRegion === 'canada'"
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-    >
-      <template x-for="shop in [
+          <!-- Canada Shops -->
+          <!-- <div
+            x-show="activeShopRegion === 'canada'"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+          >
+            <template
+              x-for="shop in [
         { href: '#', img: 'https://images.pexels.com/photos/230544/pexels-photo-230544.avif', alt: 'Amazon Canada', name: 'Amazon Canada', desc: translations[language].shops.list.amazonCA },
         { href: '#', img: 'https://images.pexels.com/photos/298863/pexels-photo-298863.avif', alt: 'Canadian Tire', name: 'Canadian Tire', desc: translations[language].shops.list.canadianTire },
         { href: '#', img: 'https://images.pexels.com/photos/1884581/pexels-photo-1884581.avif', alt: 'Hudson\'s Bay', name: 'Hudson\'s Bay', desc: translations[language].shops.list.hudsonsBay },
         { href: '#', img: 'https://images.pexels.com/photos/1884583/pexels-photo-1884583.avif', alt: 'Shoppers Drug Mart', name: 'Shoppers Drug Mart', desc: translations[language].shops.list.shoppers }
-      ]" :key="shop.name">
-        <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 overflow-hidden group">
-          <div class="relative overflow-hidden">
-            <img :src="shop.img" :alt="shop.alt" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-900 mb-2" x-text="shop.name"></h3>
-            <p class="text-gray-600 text-sm" x-text="shop.desc"></p>
-          </div>
+      ]"
+              :key="shop.name"
+            >
+              <div
+                class="bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 overflow-hidden group"
+              >
+                <div class="relative overflow-hidden">
+                  <img
+                    :src="shop.img"
+                    :alt="shop.alt"
+                    class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  >
+                </div>
+                <div class="p-6">
+                  <h3
+                    class="text-xl font-bold text-gray-900 mb-2"
+                    x-text="shop.name"
+                  >
+                  </h3>
+                  <p class="text-gray-600 text-sm" x-text="shop.desc"></p>
+                </div>
+              </div>
+            </template>
+          </div> -->
         </div>
-      </template>
-    </div>
-  </div>
-</section>
-
+      </section>
 
       <!-- How It Works Section -->
       <section id="how-it-works" class="py-20 bg-white">
@@ -1478,32 +1521,33 @@
               buttonSecondary: "Learn More About Us",
             },
             shops: {
-          title: "Shop from Top Retailers",
-          subtitle: "Access thousands of brands from the USA, UAE, and Canada",
-          uae: "UAE Shops",
-          us: "US Shops",
-          canada: "Canada Shops",
-          list: {
-            amazonUAE: "Everything from tech to home goods",
-            noon: "Middle East's online marketplace",
-            namshi: "Fashion and lifestyle destination",
-            sixthStreet: "Premium fashion and accessories",
-            hm: "Trendy fashion at affordable prices",
-            bbw: "Skincare, and home essentials",
-            sivvi: "Online fashion store",
-            ounass: "Luxury fashion and designer brands",
+              title: "Shop from Top Retailers",
+              subtitle:
+                "Access thousands of brands from the USA, UAE, and Canada",
+              uae: "UAE Shops",
+              us: "US Shops",
+              canada: "Canada Shops",
+              list: {
+                amazonUAE: "Everything from tech to home goods",
+                noon: "Middle East's online marketplace",
+                namshi: "Fashion and lifestyle destination",
+                sixthStreet: "Premium fashion and accessories",
+                hm: "Trendy fashion at affordable prices",
+                bbw: "Skincare, and home essentials",
+                sivvi: "Online fashion store",
+                ounass: "Luxury fashion and designer brands",
 
-            amazonUS: "World's largest online marketplace",
-            nike: "Athletic footwear and apparel",
-            bestbuy: "Electronics and technology",
-            macys: "Store for fashion and home",
+                amazonUS: "World's largest online marketplace",
+                nike: "Athletic footwear and apparel",
+                bestbuy: "Electronics and technology",
+                macys: "Store for fashion and home",
 
-            amazonCA: "Canada's premier online marketplace",
-            canadianTire: "Automotive, sports, and home goods",
-            hudsonsBay: "Canada's iconic department store",
-            shoppers: "Health, beauty, and convenience",
-          },
-        },
+                amazonCA: "Canada's premier online marketplace",
+                canadianTire: "Automotive, sports, and home goods",
+                hudsonsBay: "Canada's iconic department store",
+                shoppers: "Health, beauty, and convenience",
+              },
+            },
           },
           uz: {
             title:
@@ -1592,32 +1636,33 @@
               buttonSecondary: "Biz haqimizda ko'proq ma'lumot",
             },
             shops: {
-          title: "Eng yaxshi do'konlardan xarid qiling",
-          subtitle: "AQSh, BAA va Kanadadan minglab brendlarga kirish",
-          uae: "BAA do'konlari",
-          us: "AQSh do'konlari",
-          canada: "Kanada do'konlari",
-          list: {
-            amazonUAE: "Texnika va uy buyumlaridan tortib hammasi",
-            noon: "Yaqin Sharqning onlayn bozor joyi",
-            namshi: "Moda va turmush tarzi manzili",
-            sixthStreet: "Premium moda va aksessuarlar",
-            hm: "Trendli moda arzon narxlarda",
-            bbw: "Atirlar, teri parvarishi va uy buyumlari",
-            sivvi: "Onlayn moda do'koni",
-            ounass: "Lüks moda va dizayner brendlari",
+              title: "Eng yaxshi do'konlardan xarid qiling",
+              subtitle:
+                "AQSh, BAA va Kanadadan minglab brendlarga kirish",
+              uae: "BAA do'konlari",
+              us: "AQSh do'konlari",
+              canada: "Kanada do'konlari",
+              list: {
+                amazonUAE: "Texnika va uy buyumlaridan tortib hammasi",
+                noon: "Yaqin Sharqning onlayn bozor joyi",
+                namshi: "Moda va turmush tarzi manzili",
+                sixthStreet: "Premium moda va aksessuarlar",
+                hm: "Trendli moda arzon narxlarda",
+                bbw: "Atirlar, teri parvarishi va uy buyumlari",
+                sivvi: "Onlayn moda do'koni",
+                ounass: "Lüks moda va dizayner brendlari",
 
-            amazonUS: "Dunyoning eng yirik onlayn bozori",
-            nike: "Sport oyoq-kiyimlari va kiyimlari",
-            bestbuy: "Elektronika va texnologiya",
-            macys: "Moda va uy uchun do'kon",
+                amazonUS: "Dunyoning eng yirik onlayn bozori",
+                nike: "Sport oyoq-kiyimlari va kiyimlari",
+                bestbuy: "Elektronika va texnologiya",
+                macys: "Moda va uy uchun do'kon",
 
-            amazonCA: "Kanadaning yetakchi onlayn bozori",
-            canadianTire: "Avtomobil, sport va uy buyumlari",
-            hudsonsBay: "Kanadaning mashhur universal do'koni",
-            shoppers: "Sog'liq, go'zallik va qulayliklar",
-          },
-        },
+                amazonCA: "Kanadaning yetakchi onlayn bozori",
+                canadianTire: "Avtomobil, sport va uy buyumlari",
+                hudsonsBay: "Kanadaning mashhur universal do'koni",
+                shoppers: "Sog'liq, go'zallik va qulayliklar",
+              },
+            },
           },
         },
       };

@@ -512,11 +512,15 @@
           >
             <template
               x-for="shop in [
-        { href: 'https://www.amazon.com/', img: './assets/images/shops/usa/amazon.avif', alt: 'Amazon US', name: 'Amazon US', desc: translations[language].shops.list.amazonUS },
-        { href: 'https://www.nike.com/', img: './assets/images/shops/usa/Nike.avif', alt: 'Nike', name: 'Nike', desc: translations[language].shops.list.nike },
-        { href: 'https://www.bestbuy.com/', img: './assets/images/shops/usa/BestBuy.avif', alt: 'Best Buy', name: 'Best Buy', desc: translations[language].shops.list.bestbuy },
-        { href: 'https://www.macys.com/', img: './assets/images/shops/usa/macy.avif', alt: 'Macy\'s', name: 'Macy\'s', desc: translations[language].shops.list.macys }
-      ]"
+  { href: 'https://www.amazon.com/', img: './assets/images/shops/usa/amazon.avif', alt: 'Amazon US', name: 'Amazon US', desc: translations[language].shops.list.amazonUS },
+  { href: 'https://www.nike.com/', img: './assets/images/shops/usa/Nike.avif', alt: 'Nike', name: 'Nike', desc: translations[language].shops.list.nike },
+  { href: 'https://www.bestbuy.com/', img: './assets/images/shops/usa/BestBuy.avif', alt: 'Best Buy', name: 'Best Buy', desc: translations[language].shops.list.bestbuy },
+  { href: 'https://www.macys.com/', img: './assets/images/shops/usa/macy.avif', alt: 'Macy\'s', name: 'Macy\'s', desc: translations[language].shops.list.macys },
+  { href: 'https://www.walmart.com/', img: './assets/images/shops/usa/walmart.avif', alt: 'Walmart', name: 'Walmart', desc: translations[language].shops.list.walmart },
+  { href: 'https://www.target.com/', img: './assets/images/shops/usa/target.avif', alt: 'Target', name: 'Target', desc: translations[language].shops.list.target },
+  { href: 'https://www.kohls.com/', img: './assets/images/shops/usa/khols.avif', alt: 'Kohl\'s', name: 'Kohl\'s', desc: translations[language].shops.list.kohls },
+  { href: 'https://www.staples.com/', img: './assets/images/shops/usa/staples.avif', alt: 'Staples', name: 'Staples', desc: translations[language].shops.list.staples },
+]"
               :key="shop.name"
             >
               <a :href="shop.href" target="_blank" rel="noopener noreferrer">
@@ -544,21 +548,28 @@
           </div>
 
           <!-- Canada Shops -->
-          <!-- <div
+          <div
             x-show="activeShopRegion === 'canada'"
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
           >
             <template
               x-for="shop in [
-        { href: '#', img: 'https://images.pexels.com/photos/230544/pexels-photo-230544.avif', alt: 'Amazon Canada', name: 'Amazon Canada', desc: translations[language].shops.list.amazonCA },
-        { href: '#', img: 'https://images.pexels.com/photos/298863/pexels-photo-298863.avif', alt: 'Canadian Tire', name: 'Canadian Tire', desc: translations[language].shops.list.canadianTire },
-        { href: '#', img: 'https://images.pexels.com/photos/1884581/pexels-photo-1884581.avif', alt: 'Hudson\'s Bay', name: 'Hudson\'s Bay', desc: translations[language].shops.list.hudsonsBay },
-        { href: '#', img: 'https://images.pexels.com/photos/1884583/pexels-photo-1884583.avif', alt: 'Shoppers Drug Mart', name: 'Shoppers Drug Mart', desc: translations[language].shops.list.shoppers }
-      ]"
+      { href: 'https://www.aritzia.com/us/en', img: './assets/images/shops/canada/Aritzia.avif', alt: 'Aritzia', name: 'Aritzia', desc: translations[language].shops.list.aritzia },
+      { href: 'https://www.memoryexpress.com/', img: './assets/images/shops/canada/memoryexpress.avif', alt: 'Memory Express', name: 'Memory Express', desc: translations[language].shops.list.memoryexpress },
+      { href: 'https://www.mec.ca/en', img: './assets/images/shops/canada/mec.avif', alt: 'Mountain Equipment Company', name: 'Mountain Equipment Company', desc: translations[language].shops.list.mec },
+      { href: 'https://www.roots.com/us/en/homepage', img: './assets/images/shops/canada/roots.avif', alt: 'Roots', name: 'Roots', desc: translations[language].shops.list.roots },
+      { href: 'https://www.sportchek.ca/en.html', img: './assets/images/shops/canada/sportchek.avif', alt: 'SportChek', name: 'SportChek', desc: translations[language].shops.list.sportchek },
+      { href: 'https://www.timhortons.ca/?lang=en&locale-selected=1', img: './assets/images/shops/canada/timhortons.avif', alt: 'Tim Hortons', name: 'Tim Hortons', desc: translations[language].shops.list.timhortons },
+      { href: 'https://well.ca/', img: './assets/images/shops/canada/well.avif', alt: 'Well.ca', name: 'Well.ca', desc: translations[language].shops.list.well },
+      { href: 'https://www.canadiantire.ca/', img: './assets/images/shops/canada/cantire.avif', alt: 'Canadian Tire', name: 'Canadian Tire', desc: translations[language].shops.list.canadianTire }
+    ]"
               :key="shop.name"
             >
-              <div
-                class="bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 overflow-hidden group"
+              <a
+                :href="shop.href"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 overflow-hidden group"
               >
                 <div class="relative overflow-hidden">
                   <img
@@ -575,9 +586,9 @@
                   </h3>
                   <p class="text-gray-600 text-sm" x-text="shop.desc"></p>
                 </div>
-              </div>
+              </a>
             </template>
-          </div> -->
+          </div>
         </div>
       </section>
 
@@ -1421,14 +1432,7 @@
               countries: "Countries Served",
               years: "Years in Service",
             },
-            shops: {
-              title: "Shop from Top Retailers",
-              subtitle:
-                "Access thousands of brands from the USA, UAE, and Canada",
-              uae: "UAE Shops",
-              us: "US Shops",
-              canada: "Canada Shops",
-            },
+
             howItWorks: {
               title: "How It Works",
               subtitle:
@@ -1516,11 +1520,20 @@
                 nike: "Athletic footwear and apparel",
                 bestbuy: "Electronics and technology",
                 macys: "Store for fashion and home",
+                walmart: "Everyday low prices on everything",
+                target: "Trendy fashion and essentials",
+                kohls: "Apparel, shoes, and home goods",
+                staples: "Office supplies and technology",
 
-                amazonCA: "Canada's premier online marketplace",
+                // Canada
+                aritzia: "Women\’s fashion and lifestyle brand",
+                memoryexpress: "Computers, parts, and electronics",
+                mec: "Outdoor gear and equipment",
+                roots: "Casual wear and leather goods",
+                sportchek: "Sports equipment and activewear",
+                timhortons: "Coffee, donuts, and fast food",
+                well: "Health and wellness essentials online",
                 canadianTire: "Automotive, sports, and home goods",
-                hudsonsBay: "Canada's iconic department store",
-                shoppers: "Health, beauty, and convenience",
               },
             },
           },
@@ -1535,14 +1548,7 @@
               countries: "Xizmat ko'rsatilgan mamlakatlar",
               years: "Xizmat yillari",
             },
-            shops: {
-              title: "Eng yaxshi do'konlardan xarid qiling",
-              subtitle:
-                "AQSh, BAA va Kanadadan minglab brendlarga kirish",
-              uae: "BAA do'konlari",
-              us: "AQSh do'konlari",
-              canada: "Kanada do'konlari",
-            },
+
             howItWorks: {
               title: "Qanday ishlaydi",
               subtitle: "Xalqaro xaridlaringiz 5 oson qadamda",
@@ -1631,11 +1637,19 @@
                 nike: "Sport oyoq-kiyimlari va kiyimlari",
                 bestbuy: "Elektronika va texnologiya",
                 macys: "Moda va uy uchun do'kon",
+                walmart: "Kundalik past narxlardagi mahsulotlar",
+                target: "Moda va uy uchun arzon tovarlar",
+                kohls: "Kiyim, poyabzal va uy buyumlari",
+                staples: "Ofis anjomlari va texnologiya",
 
-                amazonCA: "Kanadaning yetakchi onlayn bozori",
+                aritzia: "Ayollar uchun moda va turmush tarzi brendi",
+                memoryexpress: "Kompyuterlar, qismlar va elektronika",
+                mec: "Tashqi faoliyat uchun anjomlar",
+                roots: "Kundalik kiyim-kechak va charm buyumlar",
+                sportchek: "Sport jihozlari va faol kiyimlar",
+                timhortons: "Kofe, ponchik va tezkor ovqatlar",
+                well: "Sog'liq va farovonlik buyumlari onlayn",
                 canadianTire: "Avtomobil, sport va uy buyumlari",
-                hudsonsBay: "Kanadaning mashhur universal do'koni",
-                shoppers: "Sog'liq, go'zallik va qulayliklar",
               },
             },
           },

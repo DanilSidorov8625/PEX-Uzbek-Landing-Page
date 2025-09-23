@@ -16,7 +16,6 @@
     <!-- CSS -->
     <link href="./assets/css/style.css" rel="stylesheet">
 
-
     <!-- Alpine.js -->
     <script
       defer
@@ -132,28 +131,26 @@
             ></a>
 
             <!-- Language Toggle -->
-<!-- Language Toggle -->
-<div class="flex items-center space-x-2">
-  <button
-    @click="language = 'en'"
-    :class="language === 'en' ? 'bg-polar-blue text-white' : 'bg-gray-200 text-gray-700'"
-    class="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer"
-    style="cursor: pointer;"
-    aria-label="Switch to English"
-  >
-    EN
-  </button>
-  <button
-    @click="language = 'uz'"
-    :class="language === 'uz' ? 'bg-polar-blue text-white' : 'bg-gray-200 text-gray-700'"
-    class="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer"
-    style="cursor: pointer;"
-    aria-label="Switch to Uzbek"
-  >
-    UZ
-  </button>
-</div>
-
+            <div class="flex items-center space-x-2">
+              <button
+                @click="language = 'en'"
+                :class="language === 'en' ? 'bg-polar-blue text-white' : 'bg-gray-200 text-gray-700'"
+                class="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer"
+                style="cursor: pointer"
+                aria-label="Switch to English"
+              >
+                EN
+              </button>
+              <button
+                @click="language = 'uz'"
+                :class="language === 'uz' ? 'bg-polar-blue text-white' : 'bg-gray-200 text-gray-700'"
+                class="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer"
+                style="cursor: pointer"
+                aria-label="Switch to Uzbek"
+              >
+                UZ
+              </button>
+            </div>
           </div>
 
           <!-- Mobile menu button -->
@@ -283,7 +280,7 @@
           </p>
           <a href="https://polexp.com/register" target="_blank" rel="noopener">
             <button
-              class="bg-white hover:bg-gray-100 text-polar-blue font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              class="cursor-pointer bg-white hover:bg-gray-100 text-polar-blue font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               x-text="translations[language].cta"
             >
               Get A Free Personal Virtual Address Now
@@ -445,21 +442,21 @@
               <button
                 @click="activeShopRegion = 'uae'"
                 :class="activeShopRegion === 'uae' ? 'bg-polar-blue text-white' : 'bg-white text-gray-700 hover:bg-gray-50'"
-                class="px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-md"
+                class="px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-md cursor-pointer"
                 x-text="translations[language].shops.uae"
               >
               </button>
               <button
                 @click="activeShopRegion = 'us'"
                 :class="activeShopRegion === 'us' ? 'bg-polar-blue text-white' : 'bg-white text-gray-700 hover:bg-gray-50'"
-                class="px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-md"
+                class="px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-md cursor-pointer"
                 x-text="translations[language].shops.us"
               >
               </button>
               <button
                 @click="activeShopRegion = 'canada'"
                 :class="activeShopRegion === 'canada' ? 'bg-polar-blue text-white' : 'bg-white text-gray-700 hover:bg-gray-50'"
-                class="px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-md"
+                class="px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-md cursor-pointer"
                 x-text="translations[language].shops.canada"
               >
               </button>
@@ -1054,7 +1051,7 @@
               rel="noopener"
             >
               <button
-                class="bg-white hover:bg-gray-100 text-polar-blue font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+                class="cursor-pointer bg-white hover:bg-gray-100 text-polar-blue font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
                 x-text="translations[language].ctaSection.buttonPrimary"
               >
               </button>
@@ -1065,7 +1062,7 @@
               rel="noopener"
             >
               <button
-                class="border-2 border-white text-white hover:bg-white hover:text-polar-blue font-bold py-4 px-8 rounded-full text-lg transition-all duration-300"
+                class="cursor-pointer border-2 border-white text-white hover:bg-white hover:text-polar-blue font-bold py-4 px-8 rounded-full text-lg transition-all duration-300"
                 x-text="translations[language].ctaSection.buttonSecondary"
               >
               </button>
@@ -1341,8 +1338,6 @@
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
-    
-
     <!-- Smooth Scrolling -->
     <script>
       // Smooth scrolling for navigation links
@@ -1362,7 +1357,6 @@
       });
 
       // Close mobile menu when clicking on a link
-
 
       function animateCounter(el) {
         const target = +el.getAttribute("data-target");

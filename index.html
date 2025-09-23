@@ -13,8 +13,9 @@
     >
     <link rel="icon" type="image/x-icon" href="./assets/logo/favicon.ico">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CSS -->
+    <link href="./assets/css/style.css" rel="stylesheet">
+
 
     <!-- Alpine.js -->
     <script
@@ -74,26 +75,6 @@
         border-width: 0;
       }
     </style>
-
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              polar: {
-                blue: "#2563eb",
-                navy: "#1e40af",
-                gray: "#64748b",
-                light: "#f1f5f9",
-              },
-            },
-            fontFamily: {
-              "museo": ["MuseoSans", "sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
   </head>
 
   <body class="bg-gray-50 font-museo">
@@ -151,24 +132,28 @@
             ></a>
 
             <!-- Language Toggle -->
-            <div class="flex items-center space-x-2">
-              <button
-                @click="language = 'en'"
-                :class="language === 'en' ? 'bg-polar-blue text-white' : 'bg-gray-200 text-gray-700'"
-                class="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-                aria-label="Switch to English"
-              >
-                EN
-              </button>
-              <button
-                @click="language = 'uz'"
-                :class="language === 'uz' ? 'bg-polar-blue text-white' : 'bg-gray-200 text-gray-700'"
-                class="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-                aria-label="Switch to Uzbek"
-              >
-                UZ
-              </button>
-            </div>
+<!-- Language Toggle -->
+<div class="flex items-center space-x-2">
+  <button
+    @click="language = 'en'"
+    :class="language === 'en' ? 'bg-polar-blue text-white' : 'bg-gray-200 text-gray-700'"
+    class="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer"
+    style="cursor: pointer;"
+    aria-label="Switch to English"
+  >
+    EN
+  </button>
+  <button
+    @click="language = 'uz'"
+    :class="language === 'uz' ? 'bg-polar-blue text-white' : 'bg-gray-200 text-gray-700'"
+    class="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer"
+    style="cursor: pointer;"
+    aria-label="Switch to Uzbek"
+  >
+    UZ
+  </button>
+</div>
+
           </div>
 
           <!-- Mobile menu button -->
@@ -1356,6 +1341,8 @@
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
+    
+
     <!-- Smooth Scrolling -->
     <script>
       // Smooth scrolling for navigation links
@@ -1375,13 +1362,7 @@
       });
 
       // Close mobile menu when clicking on a link
-      document.querySelectorAll('nav a[href^="#"]').forEach((link) => {
-        link.addEventListener("click", () => {
-          // This will be handled by Alpine.js
-          document.querySelector("[x-data]").__x.$data.mobileMenuOpen =
-            false;
-        });
-      });
+
 
       function animateCounter(el) {
         const target = +el.getAttribute("data-target");
